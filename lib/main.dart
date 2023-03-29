@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: SafeArea(child: Scaffold(
-        body: Center(child: Text("Froot", style: TextStyle(fontSize: 35)),),
+        body: Center(child: Text("FrootFroot", style: TextStyle(fontSize: 35)),),
       )),
     );
   }
