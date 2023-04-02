@@ -11,7 +11,7 @@ import 'package:froot_app/setting_page/setting_page.dart';
 
 class MainNavigation extends StatelessWidget {
 
-  static const List<Widget> _widgetOptions = <Widget>[
+  final _widgetOptions = [
     HomePage(), //홈
     DailyInspectionPage(), //일일점검
     CalendarPage(), //달력
@@ -19,7 +19,7 @@ class MainNavigation extends StatelessWidget {
     SettingPage() //설정
   ];
 
-  const MainNavigation({super.key});
+  MainNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
