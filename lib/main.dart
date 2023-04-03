@@ -13,7 +13,7 @@ class FrootApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Froot App",
       theme: ThemeData(
-        fontFamily: 'Pretendard'
+        // fontFamily: 'Pretendard'
       ),
       home: SafeArea(
         child: MainNavigation(),
