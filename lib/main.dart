@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:froot_app/main_navigation/main_navigation.dart';
 import 'package:get/get.dart';
+import 'onboarding_page/onboarding.dart';
 
 void main() {
   runApp(FrootApp());
@@ -16,7 +17,7 @@ class FrootApp extends StatelessWidget {
         // fontFamily: 'Pretendard'
       ),
       home: SafeArea(
-        child: MainNavigation(),
+        child: OnBoardingPage(),
       ),
     );
   }

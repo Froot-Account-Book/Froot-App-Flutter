@@ -15,10 +15,12 @@ dependencies:
 
   get: ^4.6.5
   cupertino_icons: ^1.0.2
+  introduction_screen: ^3.1.7 #onBoardingScreen
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
   flutter_lints: ^2.0.0
 
