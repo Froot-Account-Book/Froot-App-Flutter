@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:froot_app/calendar_page/calendar_controller.dart';
+import 'package:froot_app/calendar_page/controller/calendar_controller.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -11,7 +11,7 @@ class CalendarHeader extends StatelessWidget {
     var controller = Get.find<CalendarController>();
 
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.only(top: 20, left: 24, right: 24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

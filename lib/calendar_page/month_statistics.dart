@@ -13,7 +13,7 @@ class MonthStatistics extends StatelessWidget {
         color: Color.fromRGBO(17, 17, 17, 1));
 
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+        padding: const EdgeInsets.symmetric(horizontal: 18),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Column(children: [
