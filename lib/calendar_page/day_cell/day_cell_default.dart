@@ -6,14 +6,21 @@ class DayCellDefault extends DayCellSuper {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          showDay,
-          style: TextStyle(
-              fontSize: 10, color: Color.fromRGBO(118, 118, 118, 1)),
+    return Container(
+        alignment: Alignment.topLeft,
+        decoration: BoxDecoration(
+            border: Border(bottom: border, right: border),
+            color: Colors.white),
+        padding: const EdgeInsets.all(3),
+        child:  Column(
+          children: [
+            Text(
+              showDay,
+              style: const TextStyle(
+                  fontSize: 10, color: Color.fromRGBO(118, 118, 118, 1)),
+            )
+          ],
         )
-      ],
     );
   }
 }

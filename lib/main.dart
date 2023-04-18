@@ -16,7 +16,7 @@ class FrootApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Pretendard'
       ),
-      home: SafeArea(
+      home: const SafeArea(
         child: MainNavigation(),
       ),
     );
