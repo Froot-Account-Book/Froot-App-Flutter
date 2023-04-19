@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:froot_app/calendar_page/controller/calendar_controller.dart';
 import 'package:froot_app/calendar_page/month_year_picker.dart';
@@ -24,10 +25,20 @@ class CalendarHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               OutlinedButton(
-                onPressed: () => showDialog(
-                  context: context,
-                  builder: (context) => MonthYearPicker(controller.focusedDay.value),
-                ),
+                onPressed: () => Get.dialog(Container(
+                  width: Get.width * 0.5,
+                  height: Get.height * 0.5,
+                  color: Colors.white,
+                  child: CupertinoDatePicker(
+                    mode: CupertinoDatePickerMode.date,
+
+                    onDateTimeChanged: (value) {},
+                  ),
+                )),
+                // showDialog(
+                //   context: context,
+                //   builder: (context) => MonthYearPicker(controller.focusedDay.value),
+                // ),
                 child: Obx(
                   () => Text(
                     DateFormat.yMMM('ko_KR')

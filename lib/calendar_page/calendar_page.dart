@@ -12,14 +12,12 @@ class CalendarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(CalendarController());
-    return Scaffold(
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            CalendarHeader(), //제목 및 캘린더 컨트롤러
-            MonthStatistics(), //이번달 통계
-            CalendarBody() //캘린더
-          ]),
-    );
+    return Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          CalendarHeader(), //제목 및 캘린더 컨트롤러
+          MonthStatistics(), //이번달 통계
+          CalendarBody() //캘린더
+        ]);
   }
 }

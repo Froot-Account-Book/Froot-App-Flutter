@@ -14,7 +14,6 @@ class CalendarBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.find<CalendarController>();
-
     return Obx(
       () => TableCalendar(
         firstDay: DateTime.utc(2010, 10, 16),
@@ -25,7 +24,7 @@ class CalendarBody extends StatelessWidget {
         daysOfWeekHeight: 22,
         rowHeight: Get.height * 0.11,
         sixWeekMonthsEnforced: true,
-        onPageChanged: (focusedDay) => controller.focusedDay.value = focusedDay,
+        onPageChanged: controller.gotoMonth,
         calendarBuilders: CalendarBuilders(
           defaultBuilder: (context, day, focusedDay) => DayCellDefault(day),
           outsideBuilder: (context, day, focusedDay) => DayCellOutside(day),

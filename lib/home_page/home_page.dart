@@ -9,10 +9,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());
-    return Scaffold(
-      body: Center(
-        child: Text("홈 화면", style: TextStyle(fontSize: 35)),
-      ),
+    return Center(
+      child: Text("홈 화면", style: TextStyle(fontSize: 35)),
     );
   }
 }
