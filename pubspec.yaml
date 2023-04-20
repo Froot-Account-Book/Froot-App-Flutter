@@ -15,7 +15,7 @@ dependencies:
 
   get: ^4.6.5
   cupertino_icons: ^1.0.2
-  introduction_screen: ^3.1.7 #onBoardingScreen
+  introduction_screen: ^3.1.1 #onBoardingScreen
   table_calendar: ^3.0.9
   intl: ^0.18.0
 
