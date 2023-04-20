@@ -26,9 +26,12 @@ class MainNavigation extends StatelessWidget {
     final controller = Get.put(NavigationController());
 
     return Scaffold(
-        body: Obx(
-              () => Center(
-            child: _widgetOptions.elementAt(controller.selectedIndex.value),
+      backgroundColor: Colors.white,
+        body: SafeArea(
+          child: Obx(
+                () => Center(
+              child: _widgetOptions.elementAt(controller.selectedIndex.value),
+            ),
           ),
         ),
         bottomNavigationBar: Container(

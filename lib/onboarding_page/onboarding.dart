@@ -8,24 +8,27 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntroductionScreen(
-      pages: [
-        PageViewModel(
-          title: 'Froot ',
-          body: '오늘부터 시작하는 금융 선순환',
-          image: Image.asset('image/money_icon.png'),
-        ),
-        PageViewModel(
-          title: '로그인 화면',
-          body: 'ㅁㄴㅇㄹ',
-          image: Image.asset('image/user_icon.png'),
-        ),
-      ],
-      done: const Text('둘러보기'),
-      onDone: () {
-        Get.to(() => MainNavigation());
-      },
-      next: const Icon(Icons.arrow_forward),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: IntroductionScreen(
+          pages: [
+            PageViewModel(
+              decoration: PageDecoration(
+                pageColor: Colors.white,
+              ),
+              title: '로그인 화면',
+              body: 'ㅁㄴㅇㄹ',
+              image: Image.asset('image/user_icon.png'),
+            ),
+          ],
+          done: const Text('둘러보기'),
+          onDone: () {
+            Get.off(() => MainNavigation());
+          },
+          next: const Icon(Icons.arrow_forward),
+        )
+      ),
     );
   }
 }

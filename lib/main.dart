@@ -16,9 +16,7 @@ class FrootApp extends StatelessWidget {
       theme: ThemeData(
         // fontFamily: 'Pretendard'
       ),
-      home: SafeArea(
-        child: OnBoardingPage(),
-      ),
+      home: OnBoardingPage(),
     );
   }
 }
