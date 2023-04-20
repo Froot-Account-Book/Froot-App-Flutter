@@ -10,8 +10,7 @@ import 'package:froot_app/budget_record_page/budget_record_page.dart';
 import 'package:froot_app/setting_page/setting_page.dart';
 
 class MainNavigation extends StatelessWidget {
-
-  static const List<Widget> _widgetOptions = <Widget>[
+  final _widgetOptions = const [
     HomePage(), //홈
     DailyInspectionPage(), //일일점검
     CalendarPage(), //달력
@@ -26,19 +25,13 @@ class MainNavigation extends StatelessWidget {
     final controller = Get.put(NavigationController());
 
     return Scaffold(
-        body: Obx(
-              () => Center(
-            child: _widgetOptions.elementAt(controller.selectedIndex.value),
-          ),
-        ),
+        body: SafeArea(child: Center(child: Obx(() => _widgetOptions.elementAt(controller.selectedIndex.value)),)),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
               border: Border(
-                top: BorderSide(color: Color.fromRGBO(153, 153, 153, 1),),
-              )
-          ),
+                  top: BorderSide(color: Color.fromRGBO(153, 153, 153, 0.5)))),
           child: Obx(
-                () => BottomNavigationBar(
+            () => BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
               elevation: 0,
               items: const <BottomNavigationBarItem>[
@@ -68,7 +61,6 @@ class MainNavigation extends StatelessWidget {
               onTap: controller.setIndex,
             ),
           ),
-        )
-    );
+        ));
   }
 }
