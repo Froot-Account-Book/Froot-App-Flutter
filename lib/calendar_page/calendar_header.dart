@@ -26,19 +26,10 @@ class CalendarHeader extends StatelessWidget {
             children: [
               OutlinedButton(
                 onPressed: () => Get.dialog(Container(
-                  width: Get.width * 0.5,
-                  height: Get.height * 0.5,
-                  color: Colors.white,
-                  child: CupertinoDatePicker(
-                    mode: CupertinoDatePickerMode.date,
-
-                    onDateTimeChanged: (value) {},
-                  ),
-                )),
-                // showDialog(
-                //   context: context,
-                //   builder: (context) => MonthYearPicker(controller.focusedDay.value),
-                // ),
+                    width: Get.width * 0.5,
+                    height: Get.height * 0.5,
+                    color: Colors.white,
+                    child: MonthYearPicker(controller.focusedDay.value))),
                 child: Obx(
                   () => Text(
                     DateFormat.yMMM('ko_KR')
