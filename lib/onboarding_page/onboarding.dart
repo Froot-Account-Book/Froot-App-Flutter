@@ -19,7 +19,7 @@ class OnBoardingPage extends StatelessWidget {
               ),
               title: '로그인 화면',
               body: 'ㅁㄴㅇㄹ',
-              image: Image.asset('image/user_icon.png'),
+              image: Image.asset('images/user_icon.png'),
             ),
           ],
           done: const Text('둘러보기'),
