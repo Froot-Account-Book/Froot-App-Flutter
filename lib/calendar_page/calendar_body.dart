@@ -16,8 +16,8 @@ class CalendarBody extends StatelessWidget {
     var controller = Get.find<CalendarController>();
     return Obx(
       () => TableCalendar(
-        firstDay: DateTime.utc(2010, 10, 16),
-        lastDay: DateTime.utc(2030, 3, 14),
+        firstDay: DateTime.utc(2000, 1, 1),
+        lastDay: DateTime.utc(2030, 12, 31),
         focusedDay: controller.focusedDay.value,
         headerVisible: false,
         locale: "ko_KR",

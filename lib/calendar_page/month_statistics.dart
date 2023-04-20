@@ -7,7 +7,7 @@ class MonthStatistics extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var f = NumberFormat.currency(locale: "ko_KR", symbol: '');
-    var txtStyle = const TextStyle(
+    var defaultTxtStyle = const TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w500,
         color: Color.fromRGBO(17, 17, 17, 1));
@@ -17,7 +17,7 @@ class MonthStatistics extends StatelessWidget {
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Column(children: [
-            Text("수입", style: txtStyle),
+            Text("수입", style: defaultTxtStyle),
             const SizedBox(height: 5),
             Text(
               f.format(520000),
@@ -26,7 +26,7 @@ class MonthStatistics extends StatelessWidget {
             ),
           ]),
           Column(children: [
-            Text("소비", style: txtStyle),
+            Text("소비", style: defaultTxtStyle),
             const SizedBox(height: 5),
             Text(
               f.format(31100),
@@ -35,7 +35,7 @@ class MonthStatistics extends StatelessWidget {
             ),
           ]),
           Column(children: [
-            Text("낭비", style: txtStyle),
+            Text("낭비", style: defaultTxtStyle),
             const SizedBox(height: 5),
             Text(
               f.format(9800),
@@ -44,7 +44,7 @@ class MonthStatistics extends StatelessWidget {
             ),
           ]),
           Column(children: [
-            Text("투자", style: txtStyle),
+            Text("투자", style: defaultTxtStyle),
             const SizedBox(height: 5),
             Text(
               f.format(15600),
@@ -53,7 +53,7 @@ class MonthStatistics extends StatelessWidget {
             ),
           ]),
           Column(children: [
-            Text("남은 예산", style: txtStyle),
+            Text("남은 예산", style: defaultTxtStyle),
             const SizedBox(height: 5),
             Text(
               f.format(443500),
