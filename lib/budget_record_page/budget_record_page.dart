@@ -9,7 +9,7 @@ class BudgetRecordPage extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Text("예산기록 화면", style: TextStyle(fontSize: 35)),
+        child: Text("예산화면", style: TextStyle(fontSize: 35)),
       ),
     );
   }

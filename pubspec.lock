@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  dots_indicator:
+    dependency: transitive
+    description:
+      name: dots_indicator
+      sha256: e59dfc90030ee5a4fd4c53144a8ce97cc7a823c2067b8fb9814960cd1ae63f89
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   fake_async:
     dependency: transitive
     description:
@@ -83,6 +91,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.5"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.18.0"
+  introduction_screen:
+    dependency: "direct main"
+    description:
+      name: introduction_screen
+      sha256: "73965475d6b271846f81c5fce5b459546a4ea36c285408691522437fd6bbeb69"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.4"
   js:
     dependency: transitive
     description:
@@ -131,6 +155,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  percent_indicator:
+    dependency: "direct dev"
+    description:
+      name: percent_indicator
+      sha256: c37099ad833a883c9d71782321cb65c3a848c21b6939b6185f0ff6640d05814c
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.3"
+  simple_gesture_detector:
+    dependency: transitive
+    description:
+      name: simple_gesture_detector
+      sha256: "86d08f85f1f58583b7b4b941d989f48ea6ce08c1724a1d10954a277c2ec36592"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -168,6 +208,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  table_calendar:
+    dependency: "direct main"
+    description:
+      name: table_calendar
+      sha256: "1e3521a3e6d3fc7f645a58b135ab663d458ab12504f1ea7f9b4b81d47086c478"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.9"
   term_glyph:
     dependency: transitive
     description:
@@ -194,3 +242,4 @@ packages:
     version: "2.1.4"
 sdks:
   dart: ">=2.18.5 <3.0.0"
+  flutter: ">=2.12.0"

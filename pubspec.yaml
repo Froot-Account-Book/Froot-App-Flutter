@@ -15,34 +15,42 @@ dependencies:
 
   get: ^4.6.5
   cupertino_icons: ^1.0.2
+  introduction_screen: ^3.1.1 #onBoardingScreen
+  table_calendar: ^3.0.9
+  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  percent_indicator: ^4.0.1
+
 
   flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
 
+  assets:
+    - image/
+
   fonts:
     - family: Pretendard
       fonts:
-        - asset: assets/font/Pretendard-Thin.ttf
+        - asset: assets/fonts/Pretendard-Thin.ttf
           weight: 100
-        - asset: assets/font/Pretendard-ExtraLight.ttf
+        - asset: assets/fonts/Pretendard-ExtraLight.ttf
           weight: 200
-        - asset: assets/font/Pretendard-Light.ttf
+        - asset: assets/fonts/Pretendard-Light.ttf
           weight: 300
-        - asset: assets/font/Pretendard-Regular.ttf
+        - asset: assets/fonts/Pretendard-Regular.ttf
           weight: 400
-        - asset: assets/font/Pretendard-Medium.ttf
+        - asset: assets/fonts/Pretendard-Medium.ttf
           weight: 500
-        - asset: assets/font/Pretendard-SemiBold.ttf
+        - asset: assets/fonts/Pretendard-SemiBold.ttf
           weight: 600
-        - asset: assets/font/Pretendard-Bold.ttf
+        - asset: assets/fonts/Pretendard-Bold.ttf
           weight: 700
-        - asset: assets/font/Pretendard-ExtraBold.ttf
+        - asset: assets/fonts/Pretendard-ExtraBold.ttf
           weight: 800
-        - asset: assets/font/Pretendard-Black.ttf
+        - asset: assets/fonts/Pretendard-Black.ttf
           weight: 900
