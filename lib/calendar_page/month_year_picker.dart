@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:froot_app/calendar_page/controller/picker_controller.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class MonthYearPicker extends StatelessWidget {
-  final DateTime initialDate;
-  int selectedYearIdx, selectedMonthIdx;
+  PickerController cont;
 
-  MonthYearPicker(this.initialDate, {Key? key})
-      : selectedYearIdx = initialDate.year - 2000,
-        selectedMonthIdx = initialDate.month - 1,
+  MonthYearPicker(DateTime initialDate, {Key? key})
+      : cont = PickerController(initialDate),
         super(key: key);
 
   @override
@@ -30,44 +30,41 @@ class MonthYearPicker extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Text(
-                "날짜 선택",
-                style: TextStyle(
+              Obx(() => Text(
+                cont.curDate,
+                style: const TextStyle(
                     color: Colors.black,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.none),
-              ),
+              ),),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 SizedBox(
                     height: pickerHeight,
                     width: pickerWidth,
                     child: CupertinoPicker(
                       scrollController: FixedExtentScrollController(
-                          initialItem: selectedMonthIdx),
-                      itemExtent: Get.height * 0.05,
-                      onSelectedItemChanged: (newMonth) =>
-                          selectedMonthIdx = newMonth,
-                      children: List.generate(
-                          12, (idx) => Center(child: Text("${idx + 1}"))),
+                          initialItem: cont.yearIdx.value),
+                      itemExtent: itemHeight,
+                      onSelectedItemChanged: cont.changeYear,
+                      children: List.generate(nowYear + 1,
+                          (idx) => Center(child: Text("${2000 + idx}"))),
                     )),
                 SizedBox(
                     height: pickerHeight,
                     width: pickerWidth,
                     child: CupertinoPicker(
-                      scrollController:
-                          FixedExtentScrollController(initialItem: selectedYearIdx),
+                      scrollController: FixedExtentScrollController(
+                          initialItem: cont.monthIdx.value),
                       itemExtent: itemHeight,
-                      onSelectedItemChanged: (newYear) =>
-                          selectedYearIdx = newYear,
-                      children: List.generate(nowYear + 1,
-                          (idx) => Center(child: Text("${2000 + idx}"))),
+                      onSelectedItemChanged: cont.changeMonth,
+                      children: List.generate(
+                          12, (idx) => Center(child: Text("${idx + 1}"))),
                     )),
               ]),
               TextButton(
-                  onPressed: () => Get.back(
-                      result: DateTime(
-                          selectedYearIdx + 2000, selectedMonthIdx + 1)),
+                  onPressed: () =>
+                      Get.back(result: DateTime(cont.yearVal, cont.monthVal)),
                   child: const Text(
                     "확인",
                     style: TextStyle(fontSize: 20),
