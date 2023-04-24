@@ -19,13 +19,13 @@ enum ContentCategory {
   etc // 기타
 } //내역의 카테고리. 추가 가능
 
-class Content { //수입/지출 내역
+class ContentModel { //수입/지출 내역
   String name;
   int cost;
   ContentType type;
   ContentCategory category;
 
-  Content(
+  ContentModel(
       {required this.name,
         required this.category,
         required this.cost,

@@ -1,23 +1,23 @@
 import 'package:froot_app/content_model.dart';
 
-class DayContents {
+class DayContentsModel {
   //일일 수입/소비 내역
-  var contentsList = <Content>[];
+  var contentsList = <ContentModel>[];
 
   //일일 수입, 소비, 낭비, 투자, 예산
   int dayIncome, dayConsumption, dayWaste, dayInvest;
 
-  DayContents({required this.dayIncome,
+  DayContentsModel({required this.dayIncome,
         required this.dayConsumption,
         required this.dayWaste,
         required this.dayInvest});
 }
 
-class MonthContents {
+class MonthContentsModel {
   //일 - 일별 내역
-  var dayContentsMap = <int, DayContents>{};
+  var dayContentsMap = <int, DayContentsModel>{};
 
-  List<Content> get todayContents {
+  List<ContentModel> get todayContents {
     var now = DateTime.now();
     return dayContentsMap[now.day]!.contentsList;
   }
@@ -25,7 +25,7 @@ class MonthContents {
   //이번 달 수입, 소비, 낭비, 투자, 예산
   int monthIncome, monthConsumption, monthWaste, monthInvest, monthBudget;
 
-  MonthContents(
+  MonthContentsModel(
       {required this.monthIncome,
         required this.monthConsumption,
         required this.monthWaste,
