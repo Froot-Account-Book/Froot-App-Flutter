@@ -19,12 +19,15 @@ dependencies:
   table_calendar: ^3.0.9
   intl: ^0.18.0
   percent_indicator: ^4.0.1
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/froot_logo_splash.png
 
   flutter_lints: ^2.0.0
 
