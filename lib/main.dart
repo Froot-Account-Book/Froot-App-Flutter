@@ -9,13 +9,14 @@ void main() {
 }
 
 class FrootApp extends StatelessWidget {
+  bool isLogined = true;
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Froot App",
       theme: ThemeData(fontFamily: 'Pretendard'),
-      home: OnBoardingPage(),
+      home: isLogined ? MainNavigation() : OnBoardingPage(),
     );
   }
 }
