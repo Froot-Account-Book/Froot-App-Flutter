@@ -36,7 +36,7 @@ class DayCellToday extends DayCellSuper {
                       color: Colors.white
                     ),
                   )),
-              DayCellInnerContents(cont.curMonth.value.dayContentsMap[day.day]),
+              if(cont.getDayContents(day.day) != null) DayCellInnerContents(cont.getDayContents(day.day)!),
             ],
           );
         }));

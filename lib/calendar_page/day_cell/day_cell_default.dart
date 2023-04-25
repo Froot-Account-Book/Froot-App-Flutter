@@ -30,7 +30,7 @@ class DayCellDefault extends DayCellSuper {
                     style: const TextStyle(
                         fontSize: 10, color: Color.fromRGBO(118, 118, 118, 1)),
                   )),
-              DayCellInnerContents(cont.curMonth.value.dayContentsMap[day.day]),
+              if(cont.getDayContents(day.day) != null) DayCellInnerContents(cont.getDayContents(day.day)!),
             ],
           );
         }));
