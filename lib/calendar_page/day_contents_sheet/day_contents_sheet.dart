@@ -31,7 +31,7 @@ class DayContentsSheet extends StatelessWidget {
       builder: (context, scrollController) => SingleChildScrollView(
         controller: scrollController,
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -64,7 +64,7 @@ class DayContentsSheet extends StatelessWidget {
                 height: 40,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(child: Text("수입", style: defaultTxtStyle)),
                   Expanded(child: Text("소비", style: defaultTxtStyle)),
@@ -76,7 +76,7 @@ class DayContentsSheet extends StatelessWidget {
                 height: 15,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                       child: Text(f.format(dayContentsData.income ?? 0),
