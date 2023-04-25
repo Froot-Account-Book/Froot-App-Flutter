@@ -14,9 +14,7 @@ class FrootApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Froot App",
-      theme: ThemeData(
-        // fontFamily: 'Pretendard'
-      ),
+      theme: ThemeData(fontFamily: 'Pretendard'),
       home: OnBoardingPage(),
     );
   }

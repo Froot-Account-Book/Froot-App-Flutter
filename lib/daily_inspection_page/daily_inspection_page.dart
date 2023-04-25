@@ -61,13 +61,13 @@ class DailyInspectionPage extends StatelessWidget {
                       height: 10,
                     ),
                     ContentListUI(
-                        imageURL: 'images/ico2_food.png',
+                        imageURL: 'assets/images/ico2_food.png',
                         contentName: '학식',
                         contentPrice: '4500원',
                         sideText: '맛있다'
                     ),
                     ContentListUI(
-                        imageURL: 'images/ico3_goods.png',
+                        imageURL: 'assets/images/ico3_goods.png',
                         contentName: '텀블러',
                         contentPrice: '5000원',
                         sideText: '야미'

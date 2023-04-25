@@ -13,27 +13,22 @@ class CalendarBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.find<CalendarController>();
+    var cont = Get.find<CalendarController>();
     return Obx(
       () => TableCalendar(
-        firstDay: DateTime.utc(2010, 10, 16),
-        lastDay: DateTime.utc(2030, 3, 14),
-        focusedDay: controller.focusedDay.value,
+        firstDay: DateTime.utc(2000, 1, 1),
+        lastDay: DateTime.utc(2030, 12, 31),
+        focusedDay: cont.focusedDay.value,
         headerVisible: false,
         locale: "ko_KR",
         daysOfWeekHeight: 22,
         rowHeight: Get.height * 0.11,
         sixWeekMonthsEnforced: true,
-        onPageChanged: controller.gotoMonth,
+        onPageChanged: cont.gotoMonth,
         calendarBuilders: CalendarBuilders(
           defaultBuilder: (context, day, focusedDay) => DayCellDefault(day),
           outsideBuilder: (context, day, focusedDay) => DayCellOutside(day),
-          todayBuilder: (context, day, focusedDay) {
-            if (day.month != focusedDay.month) {
-              return DayCellOutside(day);
-            }
-            return DayCellToday(day, focusedDay);
-          },
+          todayBuilder: (context, day, focusedDay) => day.month == focusedDay.month ? DayCellToday(day) : DayCellOutside(day),
           dowBuilder: (context, day) {
             return Container(
               decoration:
