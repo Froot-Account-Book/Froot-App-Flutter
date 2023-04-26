@@ -35,7 +35,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/user_icon.png
     - assets/images/ico0_income.png
     - assets/images/ico1_food.png
     - assets/images/ico2_goods.png
@@ -46,7 +45,8 @@ flutter:
     - assets/images/ico7_edu.png
     - assets/images/ico8_event.png
     - assets/images/ico9_etc.png
-    - assets/images/money_icon.png
+    - assets/images/heart.png
+    - assets/images/user.png
 
   fonts:
     - family: Pretendard
