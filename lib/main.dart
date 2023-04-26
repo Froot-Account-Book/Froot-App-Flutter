@@ -19,6 +19,7 @@ class FrootApp extends StatelessWidget {
           // fontFamily: 'Pretendard'
           ),
       home: isLogined ? MainNavigation() : LoginPage(),
+      //dd
     );
   }
 }
