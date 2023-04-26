@@ -15,10 +15,11 @@ dependencies:
 
   get: ^4.6.5
   cupertino_icons: ^1.0.2
+  introduction_screen: ^3.1.1 #onBoardingScreen
   table_calendar: ^3.0.9
   intl: ^0.18.0
   percent_indicator: ^4.0.1
-  flutter_native_splash: ^2.2.18
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_test:
@@ -34,6 +35,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/user_icon.png
     - assets/images/ico0_income.png
     - assets/images/ico1_food.png
     - assets/images/ico2_goods.png
@@ -44,8 +46,7 @@ flutter:
     - assets/images/ico7_edu.png
     - assets/images/ico8_event.png
     - assets/images/ico9_etc.png
-    - assets/images/heart.png
-    - assets/images/user.png
+    - assets/images/money_icon.png
 
   fonts:
     - family: Pretendard
