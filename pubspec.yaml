@@ -18,12 +18,16 @@ dependencies:
   introduction_screen: ^3.1.1 #onBoardingScreen
   table_calendar: ^3.0.9
   intl: ^0.18.0
+  percent_indicator: ^4.0.1
+  flutter_native_splash: ^2.2.18
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  percent_indicator: ^4.0.1
 
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: assets/images/froot_logo_splash.png
 
   flutter_lints: ^2.0.0
 
@@ -32,19 +36,16 @@ flutter:
 
   assets:
     - assets/images/user_icon.png
-    - assets/images/ico1_income.png
-    - assets/images/ico2_food.png
-    - assets/images/ico3_goods.png
-    - assets/images/ico4_transp1.png
-    - assets/images/ico5_transp2.png
-    - assets/images/ico6_cult1.png
-    - assets/images/ico7_cult2.png
-    - assets/images/ico8_fashion.png
-    - assets/images/ico9_health.png
-    - assets/images/ico10_edu.png
-    - assets/images/ico11_event1.png
-    - assets/images/ico12_event2.png
-    - assets/images/ico13_etc.png
+    - assets/images/ico0_income.png
+    - assets/images/ico1_food.png
+    - assets/images/ico2_goods.png
+    - assets/images/ico3_transport.png
+    - assets/images/ico4_cult.png
+    - assets/images/ico5_fashion.png
+    - assets/images/ico6_health.png
+    - assets/images/ico7_edu.png
+    - assets/images/ico8_event.png
+    - assets/images/ico9_etc.png
     - assets/images/money_icon.png
 
   fonts:

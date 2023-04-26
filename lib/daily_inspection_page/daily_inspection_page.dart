@@ -1,37 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:froot_app/daily_inspection_page/content_list_ui.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'package:froot_app/common_ui/content_list_ui.dart';
+import 'package:froot_app/content_model.dart';
+import 'package:froot_app/daily_inspection_page/title_bar.dart';
 import 'package:get/get.dart';
 
 class DailyInspectionPage extends StatelessWidget {
   const DailyInspectionPage({super.key});
-  
-  
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children:[
-                const Text('일일 점검',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Icon(
-                  Icons.help_outline_sharp,
-                  color: Colors.black.withOpacity(0.5),
-                  size: 25,
-                ),
-              ],
-            ),
+            const TitleBar(titleName: "일일 점검"),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -49,7 +32,7 @@ class DailyInspectionPage extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children:[
+                  children: [
                     Text(
                       '오늘의 지출을 돌아보세요',
                       style: TextStyle(
@@ -60,18 +43,17 @@ class DailyInspectionPage extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    ContentListUI(
-                        imageURL: 'assets/images/ico2_food.png',
-                        contentName: '학식',
-                        contentPrice: '4500원',
-                        sideText: '맛있다'
-                    ),
-                    ContentListUI(
-                        imageURL: 'assets/images/ico3_goods.png',
-                        contentName: '텀블러',
-                        contentPrice: '5000원',
-                        sideText: '야미'
-                    ),
+                    ContentListUI(ContentModel(
+                        name: "학식",
+                        category: ContentCategory.food,
+                        cost: 4500,
+                        type: ContentType.waste)),
+                    ContentListUI(ContentModel(
+                      name: '텀블러',
+                      category: ContentCategory.dailyNecessity,
+                      cost: 5000,
+                      type: ContentType.income,
+                    )),
                   ],
                 ),
               ),
