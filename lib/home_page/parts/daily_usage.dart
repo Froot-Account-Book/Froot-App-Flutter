@@ -8,13 +8,10 @@ class DailyUsage extends StatelessWidget {
   final int dailySetBudget;
   final form = NumberFormat('###,###,###,###');
   DailyUsage(
-    {
-      super.key,
+      {super.key,
       required this.month,
       required this.date,
-      required this.dailySetBudget
-    }
-  );
+      required this.dailySetBudget});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,7 @@ class DailyUsage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:[
+          children: [
             Text(
               '$month월 $date일에 소비할 수 있는 금액',
               style: const TextStyle(
@@ -55,9 +52,14 @@ class DailyUsage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            ContentListUI(imageType: 0, contentName: '알바비', contentPrice: 15123123),
-            ContentListUI(imageType: 1, contentName: 'hello', contentPrice: -11111),
-            ContentListUI(imageType: 7, contentName: 'book', contentPrice: -999999999),
+            ContentListUI(
+                imageType: 0, contentName: '알바비', contentPrice: 15123123),
+            ContentListUI(
+                imageType: 1, contentName: 'hello', contentPrice: -11111),
+            ContentListUI(
+                imageType: 7,
+                contentName: 'book',
+                contentPrice: -999999990009779909),
             const SizedBox(
               height: 30,
             ),
