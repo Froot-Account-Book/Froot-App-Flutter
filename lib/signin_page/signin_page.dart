@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:froot_app/main_navigation/main_navigation.dart';
-import 'package:froot_app/signin_page/signin_page.dart';
-import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +20,11 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              width: 250,
-              height: 250,
+              width: 200,
+              height: 200,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/user.png'),
+                  image: AssetImage('assets/images/heart.png'),
                 ),
               ),
             ),
@@ -41,7 +38,7 @@ class LoginPage extends StatelessWidget {
                   width: 30,
                 ),
                 Text(
-                  '로그인',
+                  '금융 선순환을\n시작해 볼까요?',
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -60,7 +57,7 @@ class LoginPage extends StatelessWidget {
               child: Row(
                 children: [
                   Icon(
-                    Icons.fingerprint,
+                    Icons.check_circle_outline,
                     color: Colors.black.withOpacity(0.5),
                     size: 25,
                   ),
@@ -91,44 +88,6 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                left: 30,
-                right: 30,
-              ),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.lock_outline_rounded,
-                    color: Colors.black.withOpacity(0.5),
-                    size: 25,
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Expanded(
-                    child: SizedBox(
-                      height: 50,
-                      child: TextField(
-                        obscureText: true,
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          border: UnderlineInputBorder(),
-                          labelText: '비밀번호',
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0XFF6A93BF)),
-                          ),
-                          floatingLabelStyle: TextStyle(
-                            fontSize: 12,
-                            color: Color(0XFF6A93BF),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Container(
               height: 100,
               padding: const EdgeInsets.all(30),
@@ -141,43 +100,9 @@ class LoginPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15.0),
                   ),
                 ),
-                child: const Text('로그인'),
-                onPressed: () {
-                  /////임시
-                  Get.to(MainNavigation());
-                },
+                child: const Text('회원가입'),
+                onPressed: () {},
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Get.to(SignInPage());
-                  },
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.transparent,
-                  ),
-                  child: Text(
-                    '회원가입',
-                    style: TextStyle(
-                      color: Color(0XFF6A93BF),
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.transparent,
-                  ),
-                  child: Text(
-                    '비밀번호 찾기',
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.5),
-                    ),
-                  ),
-                ),
-              ],
             ),
           ],
         ),
