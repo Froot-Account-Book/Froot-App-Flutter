@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:froot_app/calendar_page/controller/calendar_controller.dart';
 import 'package:froot_app/calendar_page/model/day_contents_model.dart';
+import 'package:froot_app/common_ui/content_list_ui.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -104,7 +105,7 @@ class DayContentsSheet extends StatelessWidget {
                   ? const Text("내역이 없습니다.")
                   : Column(
                       children: dayContentsData.contentsList
-                          .map((e) => Text(e.name))
+                          .map((e) => ContentListUI(e))
                           .toList(),
                     ),
               const SizedBox(

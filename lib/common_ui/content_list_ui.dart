@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:froot_app/common_ui/toggle_switch.dart';
+import 'package:froot_app/content_model.dart';
+import 'package:froot_app/util/common_util.dart';
 
 class ContentListUI extends StatelessWidget {
-  final String imageURL;
-  final String contentName;
-  final String contentPrice;
-  final String sideText;
+  final ContentModel model;
 
   const ContentListUI(
-    {
-      super.key,
-      required this.imageURL,
-      required this.contentName,
-      required this.contentPrice,
-      required this.sideText
-    }
-  );
+    this.model, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +21,10 @@ class ContentListUI extends StatelessWidget {
           Row(
             children: [
               CircleAvatar(
-                radius:18,
+                radius: 18,
                 backgroundColor: Colors.black12,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(imageURL), // image asset
+                  backgroundImage: AssetImage(getImageURL(model.category)), // image asset
                   backgroundColor: Colors.white,
                   radius: 17,
                 ),
@@ -41,7 +36,7 @@ class ContentListUI extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    contentName,
+                    model.name,
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,
@@ -51,7 +46,7 @@ class ContentListUI extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    contentPrice,
+                    "${model.cost}원",
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
@@ -62,9 +57,7 @@ class ContentListUI extends StatelessWidget {
               ),
             ],
           ),
-          Text(
-              sideText
-          ),
+          ToggleSwitch(model.type)
         ],
       ),
     );
