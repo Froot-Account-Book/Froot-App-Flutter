@@ -21,6 +21,7 @@ dependencies:
   percent_indicator: ^4.0.1
   flutter_native_splash: ^2.2.19
   encrypt: ^5.0.1
+  toggle_switch: ^2.1.0
 
 dev_dependencies:
   flutter_test:

@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
           color: Colors.black.withOpacity(0.7),
         ),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
