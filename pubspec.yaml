@@ -20,6 +20,7 @@ dependencies:
   intl: ^0.18.0
   percent_indicator: ^4.0.1
   flutter_native_splash: ^2.2.19
+  encrypt: ^5.0.1
 
 dev_dependencies:
   flutter_test:

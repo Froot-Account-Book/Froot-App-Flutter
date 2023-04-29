@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:froot_app/main_navigation/main_navigation.dart';
-import 'package:froot_app/signin_page/signin_page.dart';
+import 'package:froot_app/auth_pages/signin_page/signin_page.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final RxBool isFormValid = false.obs;
+  bool _isObscure = true;
+  bool _isAutoLoginChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -69,10 +80,26 @@ class LoginPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: SizedBox(
-                      height: 50,
-                      child: TextField(
+                      height: 80,
+                      child: TextFormField(
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        validator: (value) {
+                          if (!GetUtils.isEmail(value!))
+                            return '올바른 이메일을 입력해 주세요.';
+                          else
+                            return null;
+                        },
+                        controller: emailController,
+                        onChanged: (value) {
+                          isFormValid.value = emailController.text.isNotEmpty &&
+                              passwordController.text.isNotEmpty &&
+                              GetUtils.isEmail(value!);
+                        },
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
+                          errorStyle: TextStyle(
+                            fontSize: 10,
+                          ),
                           border: UnderlineInputBorder(),
                           labelText: '이메일',
                           focusedBorder: UnderlineInputBorder(
@@ -108,9 +135,14 @@ class LoginPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: SizedBox(
-                      height: 50,
-                      child: TextField(
-                        obscureText: true,
+                      height: 70,
+                      child: TextFormField(
+                        controller: passwordController,
+                        onChanged: (value) {
+                          isFormValid.value = emailController.text.isNotEmpty &&
+                              passwordController.text.isNotEmpty;
+                        },
+                        obscureText: _isObscure,
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           border: UnderlineInputBorder(),
@@ -122,6 +154,25 @@ class LoginPage extends StatelessWidget {
                             fontSize: 12,
                             color: Color(0XFF6A93BF),
                           ),
+                          suffixIcon: IconButton(
+                            icon: _isObscure
+                                ? Icon(
+                                    Icons.visibility,
+                                    color: Colors.black26,
+                                    size: 18,
+                                  )
+                                : Icon(
+                                    Icons.visibility_off,
+                                    color: Colors.black26,
+                                    size: 18,
+                                  ),
+                            onPressed: () {
+                              setState(() {
+                                _isObscure = !_isObscure;
+                              });
+                            },
+                            splashRadius: 1,
+                          ),
                         ),
                       ),
                     ),
@@ -129,23 +180,52 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: 20,
+                ),
+                Checkbox(
+                  value: _isAutoLoginChecked,
+                  onChanged: (value) {
+                    setState(() {
+                      _isAutoLoginChecked = value!;
+                    });
+                  },
+                  activeColor: Colors.black38,
+                  splashRadius: 0,
+                ),
+                Text(
+                  '자동 로그인',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.black38,
+                  ),
+                ),
+              ],
+            ),
             Container(
               height: 100,
               padding: const EdgeInsets.all(30),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  elevation: 0,
-                  minimumSize: const Size.fromHeight(50),
-                  backgroundColor: Color(0XFF6A93BF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+              child: Obx(
+                () => ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0,
+                    minimumSize: const Size.fromHeight(50),
+                    backgroundColor: Color(0XFF6A93BF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    splashFactory: NoSplash.splashFactory,
                   ),
+                  child: const Text('로그인'),
+                  onPressed: isFormValid.value
+                      ? () {
+                          Get.to(MainNavigation());
+                        }
+                      : null,
                 ),
-                child: const Text('로그인'),
-                onPressed: () {
-                  /////임시
-                  Get.to(MainNavigation());
-                },
               ),
             ),
             Row(

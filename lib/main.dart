@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:froot_app/login_page/login_page.dart';
+import 'package:froot_app/auth_pages/login_page/login_page.dart';
 import 'package:froot_app/main_navigation/main_navigation.dart';
 import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
