@@ -1,4 +1,3 @@
-
 enum ContentType {
   income,
   consumption,
@@ -19,15 +18,18 @@ enum ContentCategory {
   etc // 기타
 } //내역의 카테고리. 추가 가능
 
-class ContentModel { //수입/지출 내역
+class ContentModel {
+  //수입/지출 내역
   String name;
   int cost;
   ContentType type;
   ContentCategory category;
+  bool isFixed;
 
   ContentModel(
       {required this.name,
-        required this.category,
-        required this.cost,
-        required this.type});
+      required this.category,
+      required this.cost,
+      required this.type,
+      this.isFixed = false});
 }
