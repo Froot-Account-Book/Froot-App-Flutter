@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:froot_app/home_page/add_page.dart';
 import 'package:intl/intl.dart';
+import 'package:get/get.dart';
 import 'package:froot_app/home_page/parts/content_list_ui.dart';
 
 class DailyUsage extends StatelessWidget {
@@ -77,7 +79,9 @@ class DailyUsage extends StatelessWidget {
                   child: Material(
                     color: Color(0XFF6A93BF), // Button color
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(AddPage());
+                      },
                       child: SizedBox(
                         width: 40,
                         height: 40,

@@ -314,7 +314,11 @@ class _SignInPageState extends State<SignInPage> {
                             _isEmailCodeChecked = true;
                           });
                         }
-                      : null,
+                      : () {
+                          setState(() {
+                            _isEmailCodeChecked = false;
+                          });
+                        },
                   child: const Text('인증'),
                 ),
                 SizedBox(
@@ -323,7 +327,7 @@ class _SignInPageState extends State<SignInPage> {
                 Visibility(
                   visible: _isEmailCodeChecked,
                   child: Text(
-                    '인증되었습니다.',
+                    _isEmailCodeValid ? "인증되었습니다." : "인증코드가 틀립니다.",
                     style: TextStyle(
                       color: Color(0XFF6A93BF),
                     ),

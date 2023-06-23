@@ -16,8 +16,9 @@ class FrootApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Froot App",
       theme: ThemeData(
-          // fontFamily: 'Pretendard'
-          ),
+        scaffoldBackgroundColor: Colors.white, // 전체 배경색 완전히 하얗게
+        // fontFamily: 'Pretendard'
+      ),
       home: isLogined ? MainNavigation() : LoginPage(),
     );
   }
