@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:froot_app/main_navigation/main_navigation.dart';
 import 'package:froot_app/auth_pages/signin_page/signin_page.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);

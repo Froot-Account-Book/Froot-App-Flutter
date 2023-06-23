@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:froot_app/auth_pages/signin_page/signin_page2.dart';
+import 'package:http/http.dart' as http;
 
 class SignInPage extends StatefulWidget {
   SignInPage({Key? key}) : super(key: key);
@@ -195,10 +196,19 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                   onPressed: _isEmailValid
-                      ? () {
-                          setState(() {
-                            _isEmailNotDuplicated = true;
-                          });
+                      ? () async {
+                          final url = Uri.parse('http://192.168.1.185:8080/check'); //서버 주소 넣으면 됨
+                          final response = await http.post(url,
+                              body: emailController.value.text);
+                          print(response.body);
+                          if (response.body == 'true') {
+                            print("사용할 수 있는 이메일");
+                            setState(() {
+                              _isEmailNotDuplicated = true;
+                            });
+                          } else {
+                            print("사용할 수 없는 이메일");
+                          }
                         }
                       : null,
                   child: const Text('중복확인'),
