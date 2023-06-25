@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:froot_app/calendar_page/day_cell/day_cell_super.dart';
-import 'package:froot_app/calendar_page/day_contents_sheet/day_contents_sheet.dart';
 
 class DayCellOutside extends DayCellSuper {
   const DayCellOutside(super.day, {Key? key}) : super(key: key);
@@ -8,12 +7,7 @@ class DayCellOutside extends DayCellSuper {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => showModalBottomSheet(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-          isScrollControlled: true,
-          builder: (context) => DayContentsSheet(date),
-          context: context),
+      onTap: () => onTap(context),
       child: Container(
           alignment: Alignment.topLeft,
           decoration: BoxDecoration(

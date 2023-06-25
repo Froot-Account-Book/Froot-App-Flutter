@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class MonthYearPicker extends StatelessWidget {
-  PickerController cont;
+  final PickerController cont;
 
   MonthYearPicker(DateTime initialDate, {Key? key})
       : cont = PickerController(initialDate),

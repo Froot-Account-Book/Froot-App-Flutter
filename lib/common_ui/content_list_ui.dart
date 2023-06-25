@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:froot_app/common_ui/toggle_switch.dart';
 import 'package:froot_app/content_model.dart';
 import 'package:froot_app/util/common_util.dart';
+import 'package:intl/intl.dart';
 
 class ContentListUI extends StatelessWidget {
   final ContentModel model;
@@ -13,8 +14,10 @@ class ContentListUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final f = NumberFormat.currency(locale: "ko_KR", symbol: '');
+
     return Padding(
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -46,7 +49,7 @@ class ContentListUI extends StatelessWidget {
                     height: 2,
                   ),
                   Text(
-                    "${model.cost}원",
+                    "${model.type == ContentType.income ? '+' : '-'} ${f.format(model.cost.abs())} 원",
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,

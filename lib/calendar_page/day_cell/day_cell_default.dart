@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:froot_app/calendar_page/controller/calendar_controller.dart';
-import 'package:froot_app/calendar_page/day_contents_sheet/day_contents_sheet.dart';
 import 'package:get/get.dart';
 import 'package:froot_app/calendar_page/day_cell/day_cell_inner_contents.dart';
 import 'package:froot_app/calendar_page/day_cell/day_cell_super.dart';
@@ -13,12 +12,7 @@ class DayCellDefault extends DayCellSuper {
     var cont = Get.find<CalendarController>();
 
     return GestureDetector(
-      onTap: () => showModalBottomSheet(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-          isScrollControlled: true,
-          builder: (context) => DayContentsSheet(date),
-          context: context),
+      onTap: () => onTap(context),
       child: Container(
           alignment: Alignment.topLeft,
           decoration: BoxDecoration(

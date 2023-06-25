@@ -19,7 +19,7 @@ class DayContentsSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var f = NumberFormat.currency(locale: "ko_KR", symbol: '');
+    final f = NumberFormat.currency(locale: "ko_KR", symbol: '');
     var cont = Get.find<CalendarController>();
     var dayContentsData = cont.curMonth.value.dayContentsMap[date.day] ??
         DayContentsModel(income: 0, consumption: 0, waste: 0, invest: 0);
@@ -62,7 +62,7 @@ class DayContentsSheet extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 40,
+                height: 25,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,7 +74,7 @@ class DayContentsSheet extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 15,
+                height: 5,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,11 +95,11 @@ class DayContentsSheet extends StatelessWidget {
               ),
               const Divider(
                 thickness: 1,
-                height: 60,
+                height: 45,
               ),
               Text("수입 / 지출 내역", style: subTitleTxtStyle),
               const SizedBox(
-                height: 30,
+                height: 15,
               ),
               dayContentsData.contentsList.isEmpty
                   ? const Text("내역이 없습니다.")
@@ -115,10 +115,27 @@ class DayContentsSheet extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("피드백", style: subTitleTxtStyle),
-                  const Text("수정",
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: Color.fromRGBO(118, 118, 118, 1)))
+                  GestureDetector(
+                    onTap: () {
+                      
+                    },
+                    child: Row(
+                      children: [
+                        const Text("수정",
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Color.fromRGBO(118, 118, 118, 1))),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 2.0),
+                          child: Icon(
+                            Icons.keyboard_arrow_right,
+                            color: Color.fromRGBO(118, 118, 118, 1),
+                            size: 12,
+                          ),
+                        )
+                      ],
+                    ),
+                  )
                 ],
               )
             ],

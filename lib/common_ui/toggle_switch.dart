@@ -12,6 +12,27 @@ class ToggleSwitch extends StatefulWidget {
 
 class _ToggleSwitchState extends State<ToggleSwitch> {
   late ContentType selectedType;
+  var selectedDecoration = BoxDecoration(
+    color: Color.fromRGBO(106, 147, 191, 0.7),
+  );
+
+  static const borderColor = const Color.fromRGBO(106, 147, 191, 1);
+  static const borderSide = const BorderSide(color: borderColor);
+
+  var rightDeco = BoxDecoration(
+      color: Colors.white,
+      border: Border(right: borderSide, top: borderSide, bottom: borderSide));
+
+  var middleDeco = BoxDecoration(
+      color: Colors.white, border: Border.symmetric(horizontal: borderSide));
+
+  var leftDeco = BoxDecoration(
+      color: Colors.white,
+      border: Border(left: borderSide, top: borderSide, bottom: borderSide));
+
+  var selectedTxtStyle = TextStyle(fontSize: 12, color: Colors.white);
+  var defaultTxtStyle =
+  TextStyle(fontSize: 12, color: Color.fromRGBO(153, 153, 153, 1));
 
   @override
   void initState() {
@@ -21,17 +42,6 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    var selectedDecoration = BoxDecoration(
-      color: Color.fromRGBO(106, 147, 191, 0.7),
-    );
-    var defaultDecoration = BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Color.fromRGBO(106, 147, 191, 1)));
-
-    var selectedTxtStyle = TextStyle(fontSize: 12, color: Colors.white);
-    var defaultTxtStyle =
-        TextStyle(fontSize: 12, color: Color.fromRGBO(153, 153, 153, 1));
-
     return selectedType == ContentType.income
         ? Container(
             width: 108,
@@ -39,7 +49,10 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
             decoration:
                 BoxDecoration(color: Color.fromRGBO(118, 118, 118, 0.7)),
             alignment: Alignment.center,
-            child: Text("수입",style: TextStyle(color: Colors.white, fontSize: 12),),
+            child: Text(
+              "수입",
+              style: TextStyle(color: Colors.white, fontSize: 12),
+            ),
           )
         : SizedBox(
             width: 108,
@@ -54,7 +67,7 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                       alignment: Alignment.center,
                       decoration: selectedType == ContentType.consumption
                           ? selectedDecoration
-                          : defaultDecoration,
+                          : leftDeco,
                       child: Text(
                         "소비",
                         style: selectedType == ContentType.consumption
@@ -64,6 +77,11 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                     ),
                   ),
                 ),
+                VerticalDivider(
+                  width: 1,
+                  color: borderColor,
+                  thickness: 1,
+                ),
                 Expanded(
                   child: GestureDetector(
                     onTap: () =>
@@ -72,7 +90,7 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                       alignment: Alignment.center,
                       decoration: selectedType == ContentType.waste
                           ? selectedDecoration
-                          : defaultDecoration,
+                          : middleDeco,
                       child: Text(
                         "낭비",
                         style: selectedType == ContentType.waste
@@ -82,6 +100,11 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                     ),
                   ),
                 ),
+                VerticalDivider(
+                  width: 1,
+                  color: borderColor,
+                  thickness: 1,
+                ),
                 Expanded(
                     child: GestureDetector(
                   onTap: () =>
@@ -90,7 +113,7 @@ class _ToggleSwitchState extends State<ToggleSwitch> {
                     alignment: Alignment.center,
                     decoration: selectedType == ContentType.invest
                         ? selectedDecoration
-                        : defaultDecoration,
+                        : rightDeco,
                     child: Text(
                       "투자",
                       style: selectedType == ContentType.invest
