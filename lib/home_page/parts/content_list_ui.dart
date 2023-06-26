@@ -1,36 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:froot_app/content_model.dart';
+import 'package:froot_app/util/common_util.dart';
 import 'package:intl/intl.dart';
 
 class ContentListUI extends StatelessWidget {
-  final int imageType;
+  final ContentCategory category;
   final String contentName;
   final int contentPrice;
   final form = NumberFormat('###,###,###,###');
   ContentListUI(
     {
       super.key,
-      required this.imageType,
+      required this.category,
       required this.contentName,
       required this.contentPrice,
     }
   );
-
-  String getImageURL(){
-    switch(imageType){
-      case 0: return 'assets/images/ico0_income.png';
-      case 1: return 'assets/images/ico1_food.png';
-      case 2: return 'assets/images/ico2_goods.png';
-      case 3: return 'assets/images/ico3_transport.png';
-      case 4: return 'assets/images/ico4_cult.png';
-      case 5: return 'assets/images/ico5_fashion.png';
-      case 6: return 'assets/images/ico6_health.png';
-      case 7: return 'assets/images/ico7_edu.png';
-      case 8: return 'assets/images/ico8_event.png';
-      case 9:
-      default:
-        return 'assets/images/ico9_etc.png';
-    }
-  }
 
   Color getMoneyColor(){
     if(contentPrice>0) {
@@ -61,7 +46,7 @@ class ContentListUI extends StatelessWidget {
                 radius:18,
                 backgroundColor: Colors.black12,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(getImageURL()), // image asset
+                  backgroundImage: AssetImage(getImageURL(category)), // image asset
                   backgroundColor: Colors.white,
                   radius: 17,
                 ),

@@ -22,6 +22,7 @@ class ContentModel {
   //수입/지출 내역
   String name;
   int cost;
+  String memo;
   ContentType type;
   ContentCategory category;
   bool isFixed;
@@ -31,5 +32,6 @@ class ContentModel {
       required this.category,
       required this.cost,
       required this.type,
+      this.memo = '',
       this.isFixed = false});
 }

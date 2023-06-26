@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:froot_app/home_page/add_page.dart';
+import 'package:froot_app/common_ui/add_page.dart';
+import 'package:froot_app/content_model.dart';
 import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 import 'package:froot_app/home_page/parts/content_list_ui.dart';
@@ -9,6 +10,7 @@ class DailyUsage extends StatelessWidget {
   final int date;
   final int dailySetBudget;
   final form = NumberFormat('###,###,###,###');
+
   DailyUsage(
       {super.key,
       required this.month,
@@ -55,11 +57,15 @@ class DailyUsage extends StatelessWidget {
               height: 20,
             ),
             ContentListUI(
-                imageType: 0, contentName: '알바비', contentPrice: 15123123),
+                category: ContentCategory.income,
+                contentName: '알바비',
+                contentPrice: 15123123),
             ContentListUI(
-                imageType: 1, contentName: 'hello', contentPrice: -11111),
+                category: ContentCategory.food,
+                contentName: 'hello',
+                contentPrice: -11111),
             ContentListUI(
-                imageType: 7,
+                category: ContentCategory.culturalLife,
                 contentName: 'book',
                 contentPrice: -999999990009779909),
             const SizedBox(
