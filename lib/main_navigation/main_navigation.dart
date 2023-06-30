@@ -10,7 +10,7 @@ import 'package:froot_app/budget_record_page/budget_record_page.dart';
 import 'package:froot_app/setting_page/setting_page.dart';
 
 class MainNavigation extends StatelessWidget {
-  final _widgetOptions = const [
+  final _widgetOptions = [
     HomePage(), //홈
     DailyInspectionPage(), //일일점검
     CalendarPage(), //달력
@@ -18,17 +18,17 @@ class MainNavigation extends StatelessWidget {
     SettingPage() //설정
   ];
 
-  const MainNavigation({super.key});
+  MainNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
 
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Obx(
-                () => Center(
+            () => Center(
               child: _widgetOptions.elementAt(controller.selectedIndex.value),
             ),
           ),
